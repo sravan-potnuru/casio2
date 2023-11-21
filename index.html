@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="fav.png" type="image/x-icon">
+    <title>Calsy Js</title>
+<script>
+var display = document.querySelector("#display");
+var buttons = document.querySelectorAll("button");
+var rocket = document.querySelector('.emoji');
+var rocket1 = document.querySelector('#rocket');
+buttons.forEach((btn)=>{
+    btn.addEventListener("click",()=>{
+        if(btn.id==="="){
+            display.value = eval(display.value);
+        }
+        else if(btn.id ==="ac"){
+            display.value = "";
+        }
+        else if(btn.id ==="de"){
+            display.value = display.value.slice(0, -1);
+        }
+        else{
+            display.value +=btn.id;
+        }
+    });
+});
+rocket.addEventListener("click",()=>{
+    rocket1.classList.add('rocket');
+    confirm('Only one chance if you want again Please refresh and then click');
+})
+</script>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" readonly>
+        <div id="buttons">
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button>/</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>*</button>
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>-</button>
+            <button>00</button>
+            <button>0</button>
+            <button>🚀</button>
+            <button class="operator">=</button>
+            <button class="operator" id="ac">AC</button>
+            <button class="operator" id="de">DEL</button>
+        </div>
+    </div>
+    <img src="rocket.png" id="rocket" alt="">
+    <script src="cal.js"></script>
+</body>
+</html>
